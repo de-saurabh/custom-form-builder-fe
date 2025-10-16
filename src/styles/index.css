@@ -1,0 +1,75 @@
+/* src/styles/index.css
+   Global base styles to ensure the app fills the viewport and avoids background gaps.
+   Save/replace this file and make sure it's imported in main.tsx (import "./styles/index.css"; or "./index.css" if you used that path).
+*/
+
+/* Make sure root fills the viewport */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a neutral page background so no dark edge shows through */
+body {
+    background-color: #f5f7fa; /* light neutral background; change if you want pure white (#fff) */
+    color: #111;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make sure all elements use border-box sizing */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Utility container: center horizontally, but allow full height/width */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* small helpers used by pages */
+.sr-only {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    white-space: nowrap;
+}
+
+/* base button reset (used across the app) */
+button {
+    font: inherit;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* default anchor reset */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* default table layout improvements */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* small responsive tweak:
+   On narrow screens make the table scroll horizontally rather than overflow the page */
+@media (max-width: 820px) {
+    .forms-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
