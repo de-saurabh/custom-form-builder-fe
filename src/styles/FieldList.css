@@ -1,0 +1,195 @@
+/* Container that wraps the fields list (use where FieldList is rendered) */
+.field-list {
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #eef6fb;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 6px 14px rgba(43, 140, 255, 0.03);
+}
+
+/* Heading (if you use .pane-heading inside this container) */
+.field-list > .pane-heading {
+    margin: 0 0 8px 0;
+    font-weight: 700;
+    color: #08324a;
+}
+
+/* Unordered list reset */
+.field-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each row: consistent height, two-column layout (label+meta | actions) */
+.field-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    border: 1px solid #f0f6fb;
+    min-height: 56px;
+    box-sizing: border-box;
+
+    /* Give label area the main space, keep actions fixed */
+    justify-content: flex-start; /* IMPORTANT: not space-between */
+}
+
+/* Last row spacing */
+.field-list ul li:last-child .field-row {
+    margin-bottom: 0;
+}
+
+/* Main clickable area: label and small meta (type, placeholder) */
+.field-row-main {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1 1 auto;   /* allow this area to grow */
+    min-width: 0;     /* critical for ellipsis inside a flex child */
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+
+/* Left column text block (label & meta) */
+.field-row-label {
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: #072034;
+
+    /* Allow long labels to show more before ellipsis */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* increase this if you want more characters to remain visible */
+    max-width: 500px; /* <-- you can adjust this (e.g., 400, 500, 600) */
+}
+
+/* small meta under label or beside it */
+.field-row-type {
+    font-size: 0.82rem;
+    color: #45636f;
+    background: #f1f8ff;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+/* color swatch replacing text badge */
+.field-row-swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px; /* use 50% for circle */
+    flex: 0 0 auto;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05), inset 0 -1px 0 rgba(0,0,0,0.02);
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-left: 8px;
+}
+
+/* type colors - match FieldPalette colors */
+/* text */
+.field-row-swatch.type-text { background: #2b8cff; }
+
+/* textarea */
+.field-row-swatch.type-textarea { background: #0ea5e9; }
+
+/* number */
+.field-row-swatch.type-number { background: #6366f1; }
+
+/* select */
+.field-row-swatch.type-select { background: #8b5cf6; }
+
+/* checkbox */
+.field-row-swatch.type-checkbox { background: #10b981; }
+
+/* radio */
+.field-row-swatch.type-radio { background: #f97316; }
+
+/* date */
+.field-row-swatch.type-date { background: #64748b; }
+
+
+/* If you want a two-line label, use this block instead (comment out above single-line):
+.field-row-label {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+*/
+
+/* Actions block: fixed-width area so buttons don't jump */
+.field-row-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 160px; /* reserve space for action buttons (tweak as needed) */
+    justify-content: flex-end;
+}
+
+/* Action buttons styling */
+.field-row-actions .btn {
+    padding: 6px 8px;
+    font-size: 0.82rem;
+    border-radius: 6px;
+    border: 1px solid rgba(10, 50, 80, 0.06);
+    background: #ffffff;
+    box-shadow: none;
+}
+
+.field-row-actions .btn.small {
+    padding: 5px 7px;
+}
+
+/* Hover / focus states */
+.field-row:hover,
+.field-row:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(43, 140, 255, 0.05);
+    border-color: #e1f0ff;
+}
+
+/* Selected state — stands out more */
+.field-row.selected {
+    border: 1px solid #cfe8ff;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    box-shadow: 0 8px 24px rgba(43, 140, 255, 0.08);
+}
+
+/* Muted fallback */
+.field-list .muted {
+    color: #6b7785;
+    padding: 12px;
+    font-size: 0.95rem;
+}
+
+/* Responsive tweak: on very small screens reduce reserved action width
+   and allow rows to wrap more vertically */
+@media (max-width: 700px) {
+    .field-row-label {
+        max-width: 220px;
+    }
+    .field-row {
+        min-height: 64px;
+    }
+    .field-row-actions {
+        width: 110px;
+        gap: 6px;
+    }
+}
+
+/* Extra: ensure buttons don't overflow their container */
+.field-row-actions .btn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

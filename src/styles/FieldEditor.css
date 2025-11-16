@@ -1,0 +1,101 @@
+/* FieldEditor layout */
+.field-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 4px;
+}
+
+/* Label wrapper */
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Input fields */
+.input {
+    padding: 8px 10px;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.input:focus {
+    border-color: #000;
+    outline: none;
+}
+
+/* Checkbox row */
+.checkbox-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Options editor */
+.options-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subheading {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.options-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.option-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.option-row .input {
+    flex: 1;
+}
+
+/* Add option button wrapper */
+.options-actions {
+    margin-top: 6px;
+}
+
+/* Buttons */
+.btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.btn.small {
+    padding: 4px 8px;
+}
+
+.btn:hover {
+    background: #eee;
+}
+
+/* Muted fallback text */
+.muted {
+    color: #777;
+    font-size: 0.9rem;
+}

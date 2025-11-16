@@ -1,0 +1,107 @@
+/* Container */
+.preview-pane {
+    padding: 8px;
+}
+
+/* Title + Description */
+.preview-title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.preview-desc {
+    margin: 4px 0 14px 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Form layout */
+.preview-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Field */
+.preview-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Label */
+.preview-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.preview-label .required {
+    color: #d00;
+    margin-left: 4px;
+}
+
+/* Inputs */
+.preview-input {
+    padding: 8px 10px;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    font-family: inherit;
+}
+
+.preview-input:focus {
+    border-color: #000;
+    outline: none;
+}
+
+/* Checkbox */
+.preview-checkbox {
+    width: 18px;
+    height: 18px;
+}
+
+/* Radio group */
+.preview-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.preview-radio-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+/* Actions */
+.preview-actions {
+    margin-top: 6px;
+}
+
+/* Button base */
+.btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background: #eee;
+}
+
+/* Primary button */
+.btn.primary {
+    background: #111;
+    color: #fff;
+    border: 1px solid #111;
+}

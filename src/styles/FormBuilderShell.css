@@ -1,0 +1,296 @@
+/* Layout for the Form Builder shell (LEFT column doubled in width) */
+.builder-shell {
+    padding: 18px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background: transparent;
+    color: #111;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Header */
+.builder-shell-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.builder-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.builder-title h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.builder-desc {
+    margin: 4px 0 0 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Header actions */
+.builder-shell-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Grid: LEFT column doubled
+   Previously: grid-template-columns: 300px 1fr 360px;
+   Now:       600px 1fr 360px  (left column doubled)
+*/
+.builder-shell-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr 400px;
+    gap: 16px;
+    align-items: start;
+}
+
+/* Fallback on small screens: stack columns vertically */
+@media (max-width: 1280px) {
+    /* On somewhat smaller screens, reduce the left column rather than stacking immediately */
+    .builder-shell-grid {
+        grid-template-columns: 480px 1fr 320px;
+    }
+}
+
+@media (max-width: 980px) {
+    .builder-shell-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Left column container */
+.left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 6px; /* small breathing room */
+}
+
+/* Middle and right columns are already cards; ensure consistent spacing */
+.middle-col,
+.right-col {
+    padding: 14px;
+}
+
+/* Card base */
+.card {
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(16,16,16,0.03);
+}
+
+/* Pane headings */
+.pane-heading {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Field palette */
+.field-palette {
+    padding: 12px;
+}
+
+/* Keep palette buttons wrapping */
+.field-palette-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Field list container adjustments (fits wider left column) */
+.field-list {
+    padding: 12px;
+    margin-top: 6px;
+}
+
+/* Field row styles (kept consistent) */
+.field-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    border: 1px solid #f0f6fb;
+    min-height: 56px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+}
+
+.field-row-main {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+
+.field-row-label {
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: #072034;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+}
+
+.field-row-type {
+    font-size: 0.82rem;
+    color: #45636f;
+    background: #f1f8ff;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+/* Actions block: fixed-width area so buttons don't jump */
+.field-row-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 160px;
+    justify-content: flex-end;
+}
+
+/* field list muted */
+.field-list .muted {
+    color: #6b7785;
+    padding: 12px;
+    font-size: 0.95rem;
+}
+
+/* Inspector (middle) */
+.inspector .label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.input,
+.textarea {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: #111;
+    outline: none;
+}
+
+/* Checkbox row */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+/* Options editor */
+.options-editor .options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.option-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Preview */
+.preview-pane {
+    padding: 8px;
+}
+
+.preview-title {
+    margin: 0;
+    font-weight: 600;
+}
+
+.preview-desc {
+    margin: 6px 0 12px 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Preview form */
+.preview-field {
+    margin-bottom: 12px;
+}
+
+.preview-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.preview-actions {
+    margin-top: 10px;
+}
+
+/* Buttons (lightweight shared) */
+.btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #d0d0d0;
+    background: #fafafa;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn.small {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+}
+
+.btn.primary {
+    background: #111;
+    color: #fff;
+    border: none;
+}
+
+/* Muted text helper */
+.muted {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* Accessibility helper */
+.sr-only {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    white-space: nowrap;
+}
